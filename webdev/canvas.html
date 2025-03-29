@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas in hmtl</title>
+    <style>
+        canvas{
+            border: 1px solid #000;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="300"></canvas>
+    <script>
+        //get the canvas element and its content
+        const canvas = document.getElementById('mycanvas');
+        const ctx = canvas.getContext('2d');
+
+        //draw a rectangle with blue fill and red border
+        ctx.fillStyle = "#3498db"; //blue fiil
+        ctx.strokeStyle ='#e74c3c' //red border
+        ctx.lineWidth = 5; //borderwidth
+
+        //draw rectangle fill then strokegistatus
+        ctx.fillRect(50,50,150,100); //x,y,width,height
+        ctx.strokeRect(50,50,150,100);
+
+        //draw a circle with green fill and purple border
+        ctx.fillStyle = '#2ecc71'  //green fill
+        ctx.strokeStyle = '9b59b6'  //purple border
+        ctx.lineWidth = '3'  //border width
+
+        //circle is drawn using arc path
+        ctx.beginPath();
+        ctx.arc(300,150,60,0,Math.PI*2);  //x,y,radius,startAngle,endAngle
+        ctx.fill();
+        ctx.stroke();
+    </script>
+    
+</body>
+</html>
